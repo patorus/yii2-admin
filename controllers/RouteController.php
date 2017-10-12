@@ -4,7 +4,7 @@ namespace mdm\admin\controllers;
 
 use Yii;
 use mdm\admin\models\Route;
-use yii\web\Controller;
+use mdm\admin\components\Controller;
 use yii\filters\VerbFilter;
 
 /**

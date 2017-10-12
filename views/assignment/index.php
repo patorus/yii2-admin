@@ -14,7 +14,6 @@ $this->title = Yii::t('rbac-admin', 'Assignments');
 $this->params['breadcrumbs'][] = $this->title;
 
 $columns = [
-    ['class' => 'yii\grid\SerialColumn'],
     $usernameField,
 ];
 if (!empty($extraColumns)) {

@@ -5,9 +5,10 @@ namespace mdm\admin\controllers;
 use Yii;
 use mdm\admin\models\Assignment;
 use mdm\admin\models\searchs\Assignment as AssignmentSearch;
-use yii\web\Controller;
+use mdm\admin\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * AssignmentController implements the CRUD actions for Assignment model.
@@ -23,6 +24,8 @@ class AssignmentController extends Controller
     public $fullnameField;
     public $searchClass;
     public $extraColumns = [];
+
+    protected $defaultAccessRoles = ['assign-user-roles'];
 
     /**
      * @inheritdoc
@@ -41,7 +44,7 @@ class AssignmentController extends Controller
      */
     public function behaviors()
     {
-        return [
+        return ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -50,7 +53,7 @@ class AssignmentController extends Controller
                     'revoke' => ['post'],
                 ],
             ],
-        ];
+        ]);
     }
 
     /**

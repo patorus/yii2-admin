@@ -12,7 +12,7 @@ use mdm\admin\models\User;
 use mdm\admin\models\searchs\User as UserSearch;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
+use mdm\admin\components\Controller;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\base\UserException;

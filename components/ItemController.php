@@ -5,7 +5,7 @@ namespace mdm\admin\components;
 use Yii;
 use mdm\admin\models\AuthItem;
 use mdm\admin\models\searchs\AuthItem as AuthItemSearch;
-use yii\web\Controller;
+use mdm\admin\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\base\NotSupportedException;
 use yii\filters\VerbFilter;

@@ -4,7 +4,7 @@ namespace mdm\admin\controllers;
 
 use Yii;
 use mdm\admin\models\BizRule;
-use yii\web\Controller;
+use mdm\admin\components\Controller;
 use mdm\admin\models\searchs\BizRule as BizRuleSearch;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
