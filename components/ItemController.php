@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\base\NotSupportedException;
 use yii\filters\VerbFilter;
 use yii\rbac\Item;
+use yii\helpers\ArrayHelper;
 
 /**
  * AuthItemController implements the CRUD actions for AuthItem model.
@@ -28,7 +29,7 @@ class ItemController extends Controller
      */
     public function behaviors()
     {
-        return [
+        return ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -37,7 +38,7 @@ class ItemController extends Controller
                     'remove' => ['post'],
                 ],
             ],
-        ];
+        ]);
     }
 
     /**

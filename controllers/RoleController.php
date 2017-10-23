@@ -13,6 +13,8 @@ use yii\rbac\Item;
  */
 class RoleController extends ItemController
 {
+    protected $defaultAccessRoles = ['admin'];
+
     /**
      * @inheritdoc
      */

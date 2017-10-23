@@ -6,6 +6,7 @@ use Yii;
 use mdm\admin\models\Route;
 use mdm\admin\components\Controller;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * Description of RuleController
@@ -17,7 +18,7 @@ class RouteController extends Controller
 {
     public function behaviors()
     {
-        return [
+        return ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -27,7 +28,7 @@ class RouteController extends Controller
                     'refresh' => ['post'],
                 ],
             ],
-        ];
+        ]);
     }
     /**
      * Lists all Route models.

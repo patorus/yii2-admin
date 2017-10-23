@@ -17,6 +17,7 @@ use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\base\UserException;
 use yii\mail\BaseMailer;
+use yii\helpers\ArrayHelper;
 
 /**
  * User controller
@@ -30,7 +31,7 @@ class UserController extends Controller
      */
     public function behaviors()
     {
-        return [
+        return ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -39,7 +40,7 @@ class UserController extends Controller
                     'activate' => ['post'],
                 ],
             ],
-        ];
+        ]);
     }
 
     /**

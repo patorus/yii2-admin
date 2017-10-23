@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use mdm\admin\components\Helper;
 use mdm\admin\components\Configs;
+use yii\helpers\ArrayHelper;
 
 /**
  * Description of RuleController
@@ -25,14 +26,14 @@ class RuleController extends Controller
      */
     public function behaviors()
     {
-        return [
+        return ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
                 ],
             ],
-        ];
+        ]);
     }
 
     /**
