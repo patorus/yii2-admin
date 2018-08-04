@@ -25,7 +25,7 @@ class AssignmentController extends Controller
     public $searchClass;
     public $extraColumns = [];
 
-    protected $defaultAccessRoles = ['user.assign-role'];
+    protected $defaultAccessRoles = ['user.assign-role', 'assign-user-roles'];
 
     /**
      * @inheritdoc
